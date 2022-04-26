@@ -1,0 +1,3 @@
+/Users/joseluistejada/Documents/Other/Development/C++/Mysql/cmake-build-debug/CMakeFiles/Mysql.dir
+/Users/joseluistejada/Documents/Other/Development/C++/Mysql/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/joseluistejada/Documents/Other/Development/C++/Mysql/cmake-build-debug/CMakeFiles/rebuild_cache.dir
