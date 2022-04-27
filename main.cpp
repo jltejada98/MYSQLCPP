@@ -91,10 +91,7 @@ int main() {
         standarizedProteins.push_back(newProteinString);
     }
 
-    //Todo, Consider change set in matches data structure.
-
     //Determine matches in standarized
-
 
     //Insert matches into DB
     std::unordered_map<std::string, std::vector<std::unordered_set<int>>> matchesMap;
@@ -114,8 +111,6 @@ int main() {
     matchPair = std::make_pair("WWWWWW", matchLocations);
     matchesMap.insert(matchPair);
 
-
-
     int insertedID = 0;
     for (auto &match: matchesMap){
         //Perform Insertion into Standardized_Sequence table.
@@ -128,12 +123,11 @@ int main() {
                 sql::SQLString getMatchID = "SELECT Stan_PatternID FROM Standardized_Sequence where Sequence_String=\"" + match.first + "\""; //GET ID if exists.
                 queryResult = queryStatment->executeQuery(getMatchID);
                 if(queryResult->next()){
-
+                    insertedID = queryResult->getInt(1);
                 }
                 else{
-
+                    std::cout << "Get ID not Sucessful" <<std::endl;
                 }
-
             }
             else{
                 std::cout << "Match" << match.first << " doesn't exist." << std::endl;
@@ -182,12 +176,14 @@ int main() {
         }
     }
 
-    //Insert into middle-man table
-
-
-
     //Terminate connection
-
+    queryResult->close();
+    delete queryResult;
+    queryStatment->close();
+    delete queryStatment;
+    connectionPTR->close();
+    delete connectionPTR;
+    newDriver->threadEnd();
 
     return 0;
 }

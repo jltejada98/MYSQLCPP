@@ -56,7 +56,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15"
+					"fragment" : "-g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk"
 				},
 				{
 					"fragment" : "-std=gnu++14"
@@ -66,7 +66,7 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/usr/local/mysql-connector-c++-8.0.28/include"
+					"path" : "/opt/homebrew/Caskroom/miniforge/base/envs/MYSQLCPP/include"
 				}
 			],
 			"language" : "CXX",
@@ -99,11 +99,11 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/usr/local/mysql-connector-c++-8.0.28/lib64",
+				"fragment" : "-L/opt/homebrew/Caskroom/miniforge/base/envs/MYSQLCPP/lib",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/usr/local/mysql-connector-c++-8.0.28/lib64",
+				"fragment" : "-Wl,-rpath,/opt/homebrew/Caskroom/miniforge/base/envs/MYSQLCPP/lib",
 				"role" : "libraries"
 			},
 			{
